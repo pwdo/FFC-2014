@@ -455,14 +455,20 @@ body {
 	background: $fireblack;
 	overflow: hidden;
 
+	@include breakpoint(t) {
+	    
+	    background: url(../img/home-background-3.png) center no-repeat;
+	    @include background-size(cover);
+	}
+
 	@include breakpoint(lm) {
 	    
-	    background: url(../img/home-background-3.jpg) center no-repeat;
+	    background: url(../img/home-background-3.png) center no-repeat;
 	    @include background-size(cover);
 	}
 
 	@include breakpoint(pm) {
-	    background: url(../img/home-background-3.jpg) center no-repeat;
+	    background: url(../img/home-background-3.png) center no-repeat;
 	    @include background-size(cover);
 	}
 
@@ -471,6 +477,10 @@ body {
 		min-width: 105%;
 		min-height: 105%;
 		@include transform(translateZ(0));
+
+		@include breakpoint(t) {
+	    	display: none;
+		}
 
 		@include breakpoint(lm) {
 	    	display: none;
@@ -837,7 +847,7 @@ section {
 	padding: 0;
 
 	.logo {
-		width: 38%;
+		width: 28%;
 		margin: 0 auto;
 
 		@include breakpoint(t) {
@@ -859,6 +869,48 @@ section {
 			@include breakpoint(pm) {
 			    max-height: 63%;
 			}
+		}
+	}
+
+	span {
+		display: block;
+		width: 100%;
+		text-align: center;
+		color: $paperwhite;
+		padding: 20px 30px;
+		position: absolute;
+		left: 0;
+		background: $textblack;
+		font-family: $komika;
+		line-height: 1.3em;
+		@include box-sizing(border-box);
+		// @include text-shadow(0 0 15px $textblack);
+	}
+
+	.tag {
+		font-size: 1.5em;
+		padding: 20px 120px;
+		top: 0;
+
+		@include breakpoint(lm) {
+		    display: none;
+		}
+
+		@include breakpoint(pm) {
+			display: none;
+		}
+	}
+
+	.date {
+		font-size: 1.5em;
+		bottom: 0;
+
+		@include breakpoint(lm) {
+		    display: none;
+		}
+
+		@include breakpoint(pm) {
+			font-size: 1.3em;
 		}
 	}
 }
