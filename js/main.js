@@ -37,9 +37,17 @@ var i=j/4;}else{var i=j/(2*Math.PI)*Math.asin(l/g);}if(h<1){return -0.5*(g*Math.
 }}}},easeInOutBounce:function(e,f,a,h,g){if(f<g/2){return jQuery.easing.easeInBounce(e,f*2,0,h,g)*0.5+a;}return jQuery.easing.easeOutBounce(e,f*2-g,0,h,g)*0.5+h*0.5+a;
 }});
 
+/*! device.js 0.1.61 */
+(function(){var a,b,c,d,e,f,g,h,i,j;a=window.device,window.device={},c=window.document.documentElement,j=window.navigator.userAgent.toLowerCase(),device.ios=function(){return device.iphone()||device.ipod()||device.ipad()},device.iphone=function(){return d("iphone")},device.ipod=function(){return d("ipod")},device.ipad=function(){return d("ipad")},device.android=function(){return d("android")},device.androidPhone=function(){return device.android()&&d("mobile")},device.androidTablet=function(){return device.android()&&!d("mobile")},device.blackberry=function(){return d("blackberry")||d("bb10")||d("rim")},device.blackberryPhone=function(){return device.blackberry()&&!d("tablet")},device.blackberryTablet=function(){return device.blackberry()&&d("tablet")},device.windows=function(){return d("windows")},device.windowsPhone=function(){return device.windows()&&d("phone")},device.windowsTablet=function(){return device.windows()&&d("touch")&&!device.windowsPhone()},device.fxos=function(){return(d("(mobile;")||d("(tablet;"))&&d("; rv:")},device.fxosPhone=function(){return device.fxos()&&d("mobile")},device.fxosTablet=function(){return device.fxos()&&d("tablet")},device.meego=function(){return d("meego")},device.cordova=function(){return window.cordova&&"file:"===location.protocol},device.nodeWebkit=function(){return"object"==typeof window.process},device.mobile=function(){return device.androidPhone()||device.iphone()||device.ipod()||device.windowsPhone()||device.blackberryPhone()||device.fxosPhone()||device.meego()},device.tablet=function(){return device.ipad()||device.androidTablet()||device.blackberryTablet()||device.windowsTablet()||device.fxosTablet()},device.desktop=function(){return!device.tablet()&&!device.mobile()},device.portrait=function(){return window.innerHeight/window.innerWidth>1},device.landscape=function(){return window.innerHeight/window.innerWidth<1},device.noConflict=function(){return window.device=a,this},d=function(a){return-1!==j.indexOf(a)},f=function(a){var b;return b=new RegExp(a,"i"),c.className.match(b)},b=function(a){return f(a)?void 0:c.className+=" "+a},h=function(a){return f(a)?c.className=c.className.replace(a,""):void 0},device.ios()?device.ipad()?b("ios ipad tablet"):device.iphone()?b("ios iphone mobile"):device.ipod()&&b("ios ipod mobile"):b(device.android()?device.androidTablet()?"android tablet":"android mobile":device.blackberry()?device.blackberryTablet()?"blackberry tablet":"blackberry mobile":device.windows()?device.windowsTablet()?"windows tablet":device.windowsPhone()?"windows mobile":"desktop":device.fxos()?device.fxosTablet()?"fxos tablet":"fxos mobile":device.meego()?"meego mobile":device.nodeWebkit()?"node-webkit":"desktop"),device.cordova()&&b("cordova"),e=function(){return device.landscape()?(h("portrait"),b("landscape")):(h("landscape"),b("portrait"))},i="onorientationchange"in window,g=i?"orientationchange":"resize",window.addEventListener?window.addEventListener(g,e,!1):window.attachEvent?window.attachEvent(g,e):window[g]=e,e()}).call(this);
+
 // Custom
 
 /* Google Map */
+
+// Declare the coordinates of the venue
+var lat = 14.640613;
+var lng = 121.076197;
+
 function initialize() {
 	var mapStyle = [
   	{
@@ -98,8 +106,8 @@ function initialize() {
   	}
 ]
 	
-	var pos = new google.maps.LatLng(14.640613, 121.076197),
-		center = new google.maps.LatLng(14.640613+0.0015, 121.076197+0.0028);
+	var pos = new google.maps.LatLng(lat, lng),
+		center = new google.maps.LatLng(lat+0.0015, lng+0.0028);
 	var mapOptions = {
 		zoom: 17,
 		center: center,
@@ -121,7 +129,7 @@ function initialize() {
 	map.setOptions({styles: mapStyle});  
 }
 
-function loadScript() {
+function dynamicMap() {
 	var script = document.createElement('script');
 	script.type = 'text/javascript';
 	script.src = 'https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAIPLPdlSIVyH0elDsMMsvLzJbaTlP0gKA&' +
@@ -129,7 +137,14 @@ function loadScript() {
 	document.body.appendChild(script);
 }
 
-window.onload = loadScript;
+function mapSwitch() {
+	if (device.desktop()) {
+		dynamicMap();
+	} else {
+		$("#location > .content").append('<a class="buttonlink" href="http://maps.google.com/maps?q='+lat+'+'+lng+'">Show me the venue</a>');
+	};
+}
+
 /* End of Google Map */
 
 function heightAdjust(object) {
@@ -194,6 +209,7 @@ $(document).ready(function() {
 
 	$(window).load(function() {
 		centerAlign(logo);
+		mapSwitch();
 	});
 
 	$(window).resize(function() {

@@ -949,7 +949,7 @@ section {
 	}
 
 	@include breakpoint(lm) {
-		@include background-size(780px, auto);
+		@include background-size(2100px, auto);
 	}
 
 	@include breakpoint(pm) {
@@ -1275,6 +1275,19 @@ section {
 		z-index: 1;
 	}
 
+	.buttonlink {
+		display: block;
+		text-align: center;
+		text-decoration: none;
+		width: 100%;
+		padding: 12px 8px;
+		background: $powerorange;
+		color: $paperwhite;
+		font-size: 1.6em;
+		margin: 0.6em 0;
+		@include box-sizing(border-box);
+	}
+
 	#map {
 		width: 100%;
 		height: 100%;
@@ -1282,6 +1295,16 @@ section {
 		top: 0;
 		left: 0;
 		background: url(../img/bg-halftone.png);
+
+		.tablet &, .mobile & {
+			display: none;
+		}
+	}
+
+	.tablet &, .mobile & {
+	    min-height: 0;
+	    background: url(../img/bg-location.svg) no-repeat center, url(../img/bg-halftone.png);
+	    @include background-size(cover);
 	}
 }
 
