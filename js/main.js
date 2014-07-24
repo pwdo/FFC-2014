@@ -45,8 +45,8 @@ var i=j/4;}else{var i=j/(2*Math.PI)*Math.asin(l/g);}if(h<1){return -0.5*(g*Math.
 /* Google Map */
 
 // Declare the coordinates of the venue
-var lat = 14.640613;
-var lng = 121.076197;
+var lat = 14.565091;
+var lng = 120.993183;
 
 function initialize() {
 	var mapStyle = [
