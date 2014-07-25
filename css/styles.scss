@@ -58,6 +58,7 @@ $franklin: 'franklin-gothic-urw-cond', 'helvetica-neue', Helvetica, Arial, sans-
 
 h1 {
 	font-size: 3.8em;
+	line-height: 1.2em;
 	// font-weight: 800;
 	margin-bottom: 0.6em;
 	color: $shieldblue;
@@ -1020,6 +1021,7 @@ section {
 		}
 
 		.speaker-description {
+			font-family: $franklin;
 			width: 100%;
 			height: $cardWidth * 0.4986px;
 			padding: 0 5px;
@@ -1029,7 +1031,7 @@ section {
 			@include box-sizing(border-box);
 
 			p {
-				font-size: 1em;
+				font-size: 1.2em;
 			}
 		}
 
@@ -1105,7 +1107,7 @@ section {
 				@include border-image(url(../img/card-border-one.png) 25% repeat);
 
 				p {
-					font-size: 1em;
+					font-size: 1.2em;
 				}
 			}
 
@@ -1176,7 +1178,7 @@ section {
 				@include border-image(url(../img/card-border-one.png) 25% repeat);
 
 				p {
-					font-size: 1em;
+					font-size: 1.2em;
 				}
 			}
 
@@ -1219,7 +1221,7 @@ section {
 				@include border-image(url(../img/card-border-one.png) 25% repeat);
 
 				p {
-					font-size: 1em;
+					font-size: 1.2em;
 				}
 			}
 
@@ -1262,7 +1264,7 @@ section {
 				@include border-image(url(../img/card-border-one.png) 25% repeat);
 
 				p {
-					font-size: 1em;
+					font-size: 1.2em;
 				}
 			}
 		}
@@ -1307,6 +1309,92 @@ section {
 	    min-height: 0;
 	    background: url(../img/bg-location.svg) no-repeat center, url(../img/bg-halftone.png);
 	    @include background-size(cover);
+	}
+}
+
+#register {
+
+	#tito-register-form {
+		background: $paperwhite;
+		border: solid 10px $powerorange;
+		padding: 25px;
+		@include box-sizing(border-box);
+	}
+
+	.tito-ticket-list {
+		list-style: none;
+	}
+
+	.tito-ticket {
+		display: block;
+		position: relative;
+		margin: 0 0 15px;
+
+		label {
+			font-family: $komika;
+			font-size: 1.3em;
+			padding: 0 0 0 2px;
+		}
+
+		.tito-ticket-price-quantity {
+			font-family: $komika;
+			font-size: 1.3em;
+			position: absolute;
+			top: 0;
+			right: 0;
+
+			>div {
+				display: inline;
+			}
+		}
+
+		.tito-ticket-price {
+			padding: 0 0 0 2px;
+			margin: 0 30px 0 0;
+		}
+
+		.tito-ticket-quantity:after {
+			content: "Order/s"
+		}
+
+		.tito-ticket-quantity-field {
+			font-family: $franklin;
+			font-size: 0.8em;
+			width: 35px;
+			text-align: center;
+		}
+	}
+
+	.tito-submit {
+		width: 100%;
+		font-family: $franklin;
+		background: #fdd007;
+		font-size: 1.5em;
+		border: none;
+		outline: none;
+		padding: 0.3em;
+		-webkit-appearance:none;
+		@include transition(background 0.2s ease-in-out);
+
+		&:hover {
+			cursor: pointer;
+			background: #fee36c;
+		}
+	}
+
+	#tito-footer {
+		display: none;
+		margin: 15px 0 0;
+		font-size: 1em;
+
+		p {
+			font-size: inherit;
+			margin: 0;
+		}
+	}
+
+	.tito-notch {
+		display: inherit;
 	}
 }
 
