@@ -1315,10 +1315,17 @@ section {
 #register {
 
 	#tito-register-form {
-		background: $paperwhite;
-		border: solid 10px $powerorange;
+		background: darken($paperwhite, 3%);
+		border: solid 5px $powerorange;
 		padding: 25px;
+		margin: 0 0 0 8px;
+		@include box-shadow(-2px 2px 0 0 $powerorange, -4px 4px 0 0 $powerorange, -6px 6px 0 0 $powerorange, -8px 8px 0 0 $powerorange);
+		@include border-radius(8px);
 		@include box-sizing(border-box);
+
+		@include breakpoint(pm) {
+		    padding: 15px 10px;
+		}
 	}
 
 	.tito-ticket-list {
@@ -1329,37 +1336,94 @@ section {
 		display: block;
 		position: relative;
 		margin: 0 0 15px;
+		@include pie-clearfix();
 
-		label {
+		.tito-ticket-name {
+			display: block;
+			width: 65%;
 			font-family: $komika;
 			font-size: 1.3em;
 			padding: 0 0 0 2px;
+			float: left;
+			@include box-sizing(border-box);
+
+			@include breakpoint(lm) {
+			    width: 100%;
+			}
+			@include breakpoint(pm) {
+			    width: 100%;
+			}
 		}
 
 		.tito-ticket-price-quantity {
+			width: 35%;
 			font-family: $komika;
 			font-size: 1.3em;
-			position: absolute;
-			top: 0;
-			right: 0;
+			float: left;
+			@include pie-clearfix();
 
-			>div {
-				display: inline;
+			@include breakpoint(lm) {
+			    width: 100%;
+			    margin: 10px 0 0;
+			}
+			@include breakpoint(pm) {
+			    width: 100%;
+			    margin: 10px 0 0;
 			}
 		}
 
 		.tito-ticket-price {
+			float: left;
 			padding: 0 0 0 2px;
-			margin: 0 30px 0 0;
+			margin: 0 10px 0 0;
+		}
+
+		.tito-ticket-quantity {
+			float: right;
+			position: relative;
+			top: -4px;
+		}
+
+		@include breakpoint(t) {
+		    .tito-ticket-quantity:before {
+				content: "X";
+				margin: 0 5px 0 0;
+				padding: 0 0 0 2px;
+			}
+		}
+
+		@include breakpoint(lm) {
+		    .tito-ticket-quantity:before {
+				content: "X";
+				margin: 0 5px 0 0;
+				padding: 0 0 0 2px;
+			}
+		}
+
+		@include breakpoint(pm) {
+		    .tito-ticket-quantity:before {
+				content: "X";
+				margin: 0 5px 0 0;
+				padding: 0 0 0 2px;
+			}
 		}
 
 		.tito-ticket-quantity:after {
-			content: "Order/s"
+			content: "Order(s)";
+			@include breakpoint(t) {
+			    content: "";
+			}
+			@include breakpoint(lm) {
+			    content: "";
+			}
+			@include breakpoint(pm) {
+			    content: "";
+			}
 		}
 
 		.tito-ticket-quantity-field {
 			font-family: $franklin;
-			font-size: 0.8em;
+			font-size: 1em;
 			width: 35px;
 			text-align: center;
 		}
