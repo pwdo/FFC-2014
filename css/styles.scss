@@ -600,7 +600,7 @@ nav {
 	padding: 15px;
 	z-index: 998;
 	@include transform(translate(0px,0px));
-	@include transition(transform 0.2s ease-in-out);
+	@include transition(transform 0.2s ease-in-out, top 0.2s ease-in-out);
 	@include box-sizing(border-box);
 
 	.nav--open & {
@@ -611,7 +611,9 @@ nav {
 		}
 
 		@include breakpoint(pm) {
-		    @include transform(translate(0px,100%));
+		    top: 0;
+		    left: 0;
+		    @include transform(translate(0,0));
 		}
 	}
 
@@ -691,7 +693,7 @@ nav {
 	@include breakpoint(pm) {
 	    width: 100%;
 	    left: 0px;
-	    top: -100%;
+	    top: -150%;
 	    padding: 44px 15px 15px;
 	}
 }
@@ -1314,11 +1316,59 @@ section {
 
 #register {
 
+	overflow: hidden;
+
+	@include breakpoint(xl) {
+	    padding: 1px 0 0;
+	    max-height: 1000px;
+	}
+
+	@include breakpoint(l) {
+	    padding: 1px 0 0;
+	    max-height: 1000px;
+	}
+
+	@include breakpoint(t) {
+	    padding: 1px 0 0;
+	    max-height: 1000px;
+	}
+
+	.content {
+		@include breakpoint(xl) {
+		    margin: 60px auto;
+		}
+		@include breakpoint(l) {
+		    margin: 60px auto;
+		}
+		@include breakpoint(t) {
+		    margin: 60px auto;
+		}
+	}
+
+	.hover-box {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		@include breakpoint(lm) {
+		    position: static;
+		    top: auto;
+		    left: auto;
+		}
+
+		@include breakpoint(pm) {
+		    position: static;
+		    top: auto;
+		    left: auto;
+		}
+	}
+
 	#tito-register-form {
 		background: darken($paperwhite, 3%);
 		border: solid 5px $powerorange;
 		padding: 25px;
-		margin: 0 0 0 8px;
+		margin: 0 0 12px 8px;
 		@include box-shadow(-2px 2px 0 0 $powerorange, -4px 4px 0 0 $powerorange, -6px 6px 0 0 $powerorange, -8px 8px 0 0 $powerorange);
 		@include border-radius(8px);
 		@include box-sizing(border-box);
@@ -1424,8 +1474,11 @@ section {
 		.tito-ticket-quantity-field {
 			font-family: $franklin;
 			font-size: 1em;
-			width: 35px;
+			width: 25px;
+			border: solid 1px $strikinggray;
 			text-align: center;
+			outline: none;
+			-webkit-appearance:none;
 		}
 	}
 
@@ -1459,6 +1512,111 @@ section {
 
 	.tito-notch {
 		display: inherit;
+	}
+
+	#hero-wall {
+		width: 100%;
+
+		.headcount-sixty li {
+			@include breakpoint(xl) {
+			    width: 12.5%;
+			}
+			@include breakpoint(l) {
+			    width: 12.5%;
+			}
+			@include breakpoint(t) {
+			    width: 20%;
+			}
+		}
+
+		.headcount-onetwenty li {
+			@include breakpoint(xl) {
+			    width: 10%;
+			}
+			@include breakpoint(l) {
+			    width: 12.5%;
+			}
+			@include breakpoint(t) {
+			    width: 20%;
+			}
+		}
+
+		.headcount-oneeighty li {
+			@include breakpoint(xl) {
+			    width: 10%;
+			}
+			@include breakpoint(l) {
+			    width: 10%;
+			}
+			@include breakpoint(t) {
+			    width: 10%;
+			}
+		}
+
+		.headcount-twoforty li {
+			@include breakpoint(xl) {
+			    width: 6.25%;
+			}
+			@include breakpoint(l) {
+			    width: 6.25%;
+			}
+			@include breakpoint(t) {
+			    width: 10%;
+			}
+		}
+
+		.headcount-threehundred li {
+			@include breakpoint(xl) {
+			    width: 5%;
+			}
+			@include breakpoint(l) {
+			    width: 6.25%;
+			}
+			@include breakpoint(t) {
+			    width: 6.25%;
+			}
+		}
+
+		.headcount-over li {
+			@include breakpoint(xl) {
+			    width: 5%;
+			}
+			@include breakpoint(l) {
+			    width: 5%;
+			}
+			@include breakpoint(t) {
+			    width: 6.25%;
+			}
+		}
+
+		li {
+			width: 20%;
+			float: left;
+
+			@include breakpoint(xl) {
+			    width: 12.5%;
+			}
+			@include breakpoint(l) {
+			    width: 14.28%;
+			}
+			@include breakpoint(t) {
+			    width: 16.6%;
+			}
+
+			img {
+				width: 100%;
+				display: block;
+				opacity: 0;
+			}
+		}
+
+		@include breakpoint(lm) {
+		    display: none;
+		}
+
+		@include breakpoint(pm) {
+		    display: none;
+		}
 	}
 }
 
