@@ -73,6 +73,16 @@ p {
 	font-size: 1.6em;
 	line-height: 1.4em;
 	margin-bottom: 0.6em;
+
+	.bold {
+		font-weight: 800;
+	}
+}
+
+small {
+	margin-top: 1.6em;
+	font-size: 1em;
+	display: block;
 }
 
 /*------------ Tools ------------*/
@@ -1316,6 +1326,7 @@ section {
 
 #register {
 
+	background: $fireblack;
 	overflow: hidden;
 
 	@include breakpoint(xl) {
@@ -1335,32 +1346,16 @@ section {
 
 	.content {
 		@include breakpoint(xl) {
+		    z-index: 1;
 		    margin: 60px auto;
 		}
 		@include breakpoint(l) {
+		    z-index: 1;
 		    margin: 60px auto;
 		}
 		@include breakpoint(t) {
+		    z-index: 1;
 		    margin: 60px auto;
-		}
-	}
-
-	.hover-box {
-		width: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-
-		@include breakpoint(lm) {
-		    position: static;
-		    top: auto;
-		    left: auto;
-		}
-
-		@include breakpoint(pm) {
-		    position: static;
-		    top: auto;
-		    left: auto;
 		}
 	}
 
@@ -1515,6 +1510,10 @@ section {
 	}
 
 	#hero-wall {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
 		width: 100%;
 
 		.headcount-sixty li {
@@ -1522,7 +1521,7 @@ section {
 			    width: 12.5%;
 			}
 			@include breakpoint(l) {
-			    width: 12.5%;
+			    width: 20%;
 			}
 			@include breakpoint(t) {
 			    width: 20%;
@@ -1573,7 +1572,7 @@ section {
 			    width: 6.25%;
 			}
 			@include breakpoint(t) {
-			    width: 6.25%;
+			    width: 10%;
 			}
 		}
 
@@ -1592,6 +1591,7 @@ section {
 		li {
 			width: 20%;
 			float: left;
+			margin: 0;
 
 			@include breakpoint(xl) {
 			    width: 12.5%;
@@ -1607,6 +1607,7 @@ section {
 				width: 100%;
 				display: block;
 				opacity: 0;
+				@include transition(opacity 0.8s ease-in-out);
 			}
 		}
 
@@ -1616,6 +1617,24 @@ section {
 
 		@include breakpoint(pm) {
 		    display: none;
+		}
+	}
+}
+
+#faq {
+	ol {
+		list-style: decimal-leading-zero;
+		padding: 0 0 0 3em;
+	}
+
+	li {
+		font-size: 1.6em;
+		line-height: 1.4em;
+		margin-bottom: 0.8em;
+
+		.question {
+			font-weight: 800;
+			display: block;
 		}
 	}
 }

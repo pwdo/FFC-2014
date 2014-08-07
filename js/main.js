@@ -179,6 +179,7 @@ function heroWall() {
 
 	$.ajax({
 		type: "GET",
+		// url: "../php/titolist.json",
 		url: "php/titolist.json",
 		dataType: "json",
 		success : function(data){
@@ -188,8 +189,8 @@ function heroWall() {
         		adding;
         	
         	for (var i = 0; i < attendees.length; i++) {
-        		if (!attendees[i].answers[4].response == "" && !include(pSpeakers, attendees[i].answers[4].response) && !include(heroes, attendees[i].answers[4].response)) {
-        			heroes.push(attendees[i].answers[4].response);
+        		if (!attendees[i].answers[3].response == "" && !include(pSpeakers, attendees[i].answers[3].response) && !include(heroes, attendees[i].answers[3].response)) {
+        			heroes.push(attendees[i].answers[3].response);
         		};
         	};
 
@@ -222,6 +223,12 @@ function heroWall() {
 
         	if (heroesNum%8 != 0 && ul.hasClass('headcount-sixty')) {
         		adding = 8-(heroesNum%8);
+        	} else if (heroesNum%10 != 0 && ul.hasClass('headcount-onetwenty')) {
+        		adding = 10-(heroesNum%10);
+        	} else if (heroesNum%16 != 0 && ul.hasClass('headcount-twoforty')) {
+        		adding = 16-(heroesNum%16);
+        	} else if (heroesNum%20 != 0 && ul.hasClass('headcount-threehundred')) {
+        		adding = 20-(heroesNum%20);
         	};
 
         	for (var i = 0; i < adding; i++) {
