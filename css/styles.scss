@@ -467,20 +467,15 @@ body {
 	overflow: hidden;
 
 	@include breakpoint(t) {
-	    
-	    background: url(../img/home-background-3.png) center no-repeat;
-	    @include background-size(cover);
+	    display: none;
 	}
 
 	@include breakpoint(lm) {
-	    
-	    background: url(../img/home-background-3.png) center no-repeat;
-	    @include background-size(cover);
+	    display: none;
 	}
 
 	@include breakpoint(pm) {
-	    background: url(../img/home-background-3.png) center no-repeat;
-	    @include background-size(cover);
+	    display: none;
 	}
 
 	img {
@@ -759,6 +754,10 @@ nav {
 			opacity: 1;
 		}
 
+		@include breakpoint(t) {
+	    	@include transform(translate(0px,0px));
+		}
+
 		@include breakpoint(lm) {
 	    	@include transform(translate(0px,0px));
 		}
@@ -881,8 +880,16 @@ section {
 			width: 100%;
 			@include filter(drop-shadow( -5px 5px 20px $textblack ));
 
+			@include breakpoint(t) {
+			    @include filter(none);
+			}
+
+			@include breakpoint(lm) {
+			    @include filter(none);
+			}
+
 			@include breakpoint(pm) {
-			    max-height: 63%;
+			    @include filter(none);
 			}
 		}
 	}
@@ -927,6 +934,21 @@ section {
 		@include breakpoint(pm) {
 			font-size: 1.3em;
 		}
+	}
+
+	@include breakpoint(t) {
+	    background: url(../img/home-background-3.png) center no-repeat;
+	    @include background-size(cover);
+	}
+
+	@include breakpoint(lm) {
+	    background: url(../img/home-background-3.png) center no-repeat;
+	    @include background-size(cover);
+	}
+
+	@include breakpoint(pm) {
+	    background: url(../img/home-background-3.png) center no-repeat;
+	    @include background-size(cover);
 	}
 }
 
@@ -1588,6 +1610,11 @@ section {
 			}
 		}
 
+		ul {
+			opacity: 0;
+			@include transition(opacity 0.8s ease-in-out);
+		}
+
 		li {
 			width: 20%;
 			float: left;
@@ -1606,7 +1633,7 @@ section {
 			img {
 				width: 100%;
 				display: block;
-				opacity: 0;
+				// opacity: 0;
 				@include transition(opacity 0.8s ease-in-out);
 			}
 		}

@@ -171,7 +171,7 @@ function include(arr,obj) {
 }
 
 function heroWall() {
-	var pSpeakers = ['ricostacruz', 'regnard', 'kutitots', 'aileenapolo', 'marco.palinar', 'helloluis', 'dan.matutina', 'allancaeg', 'andrei.gonzales', 'jpdguzman.rain', 'jason.e.torres', 'designerbriantenorio', 'jesus.santos.9404', 'jmibanez', 'camille.zapata', 'julius.cebreros', 'jamesflorentino', 'johnimbong', 'misslindsey', 'drei.alquiros', 'noelperlas', 'gorissen', 'Saint2ns', 'aaroncajes', 'rv.regalado', 'micael', 'mark.lacsamana', 'levi.ong', 'bluestella', 'sinongkit', 'maepaulino', 'jozzua', 'chakler', 'natassha.po', 'sofimi', 'oj.tibi', 'sarahcada', 'ajalapus'],
+	var pSpeakers = ['ricostacruz', 'regnard', 'kutitots', 'aileenapolo', 'marco.palinar', 'helloluis', 'dan.matutina', 'allancaeg', 'andrei.gonzales', 'jpdguzman.rain', 'jason.e.torres', 'designerbriantenorio', 'jesus.santos.9404', 'jmibanez', 'camille.zapata', 'julius.cebreros', 'jamesflorentino', 'johnimbong', 'misslindsey', 'drei.alquiros', 'noelperlas', 'gorissen', 'Saint2ns', 'aaroncajes', 'rv.regalado', 'micael', 'mark.lacsamana', 'levi.ong', 'bluestella', 'sinongkit', 'maepaulino', 'jozzua', 'chakler', 'natassha.po', 'sofimi', 'oj.tibi', 'sarahcada', 'ajalapus', 'chaklera'],
 		heroes = [],
 		heroesNum;
 
@@ -186,6 +186,7 @@ function heroWall() {
         	// console.log(data);
         	var attendees = data.attendees,
         		ul = $('#hero-wall>ul'),
+        		ajaxCall = [],
         		adding;
         	
         	for (var i = 0; i < attendees.length; i++) {
@@ -200,46 +201,74 @@ function heroWall() {
 			// heroesNum = 302;
 
         	for (var i = 0; i < heroes.length; i++) {
-        		$('#hero-wall>ul').append('<li><img src="http://graph.facebook.com/'+heroes[i]+'/picture?width=600&height=600" alt="'+heroes[i]+' is joining us at FFC"></li>');
+        		var call = $.ajax({
+					type: "GET",
+					url: "https://graph.facebook.com/"+heroes[i],
+					dataType: "jsonp",
+					success : function(person){
+			        	if (person.first_name) {
+			        		$('#hero-wall>ul').append('<li><img src="http://graph.facebook.com/'+person.username+'/picture?width=600&height=600" alt="'+person.first_name+' is joining us at FFC"></li>');
+			        	};
+			    	}
+				});
+
+				ajaxCall.push(call);
+        		// $('#hero-wall>ul').append('<li><img src="http://graph.facebook.com/'+heroes[i]+'/picture?width=600&height=600" alt="'+heroes[i]+' is joining us at FFC"></li>');
         	};
+
+        	$.when.apply($, ajaxCall).then(function(){
+			    var finalNum = $('#hero-wall>ul>li').length;
+			    // console.log(finalNum);
+			    wallFix(finalNum);
+			})
 
         	// for (var i = 0; i < heroesNum; i++) {
         	// 	$('#hero-wall>ul').append('<li><img src="img/reg-unknown.png"></li>');
         	// };
 
-        	if (heroesNum<=60) {
-        		ul.addClass('headcount-sixty');
-        	} else if (heroesNum>60&&heroesNum<=120){
-        		ul.addClass('headcount-onetwenty');
-        	} else if (heroesNum>120&&heroesNum<=180){
-        		ul.addClass('headcount-oneeighty');
-        	} else if (heroesNum>180&&heroesNum<=240){
-        		ul.addClass('headcount-twoforty');
-        	} else if (heroesNum>240&&heroesNum<=300){
-        		ul.addClass('headcount-threehundred');
-        	} else {
-        		ul.addClass('headcount-over');
-        	};
+        	function wallFix(finalNum) {
 
-        	if (heroesNum%8 != 0 && ul.hasClass('headcount-sixty')) {
-        		adding = 8-(heroesNum%8);
-        	} else if (heroesNum%10 != 0 && ul.hasClass('headcount-onetwenty')) {
-        		adding = 10-(heroesNum%10);
-        	} else if (heroesNum%16 != 0 && ul.hasClass('headcount-twoforty')) {
-        		adding = 16-(heroesNum%16);
-        	} else if (heroesNum%20 != 0 && ul.hasClass('headcount-threehundred')) {
-        		adding = 20-(heroesNum%20);
-        	};
+        		var count = finalNum;
 
-        	for (var i = 0; i < adding; i++) {
-        		$('#hero-wall>ul').append('<li><img src="img/reg-unknown.png" alt="Join us!"></li>');
-        	};
+        		if (count<=60) {
+	        		ul.addClass('headcount-sixty');
+	        	} else if (count>60&&count<=120){
+	        		ul.addClass('headcount-onetwenty');
+	        	} else if (count>120&&count<=180){
+	        		ul.addClass('headcount-oneeighty');
+	        	} else if (count>180&&count<=240){
+	        		ul.addClass('headcount-twoforty');
+	        	} else if (count>240&&count<=300){
+	        		ul.addClass('headcount-threehundred');
+	        	} else {
+	        		ul.addClass('headcount-over');
+	        	};
 
-        	$('#hero-wall img').each(function() {
-				$(this).load(function() {
-					$(this).css('opacity', 1);
-				});
-			});
+	        	if (count%8 != 0 && ul.hasClass('headcount-sixty')) {
+	        		adding = 8-(count%8);
+	        	} else if (count%10 != 0 && ul.hasClass('headcount-onetwenty')) {
+	        		adding = 10-(count%10);
+	        	} else if (count%16 != 0 && ul.hasClass('headcount-twoforty')) {
+	        		adding = 16-(count%16);
+	        	} else if (count%20 != 0 && ul.hasClass('headcount-threehundred')) {
+	        		adding = 20-(count%20);
+	        	};
+
+	        	for (var i = 0; i < adding; i++) {
+	        		$('#hero-wall>ul').append('<li><img src="img/reg-unknown.png" alt="Join us!"></li>');
+	        	};
+
+	        	setTimeout(function() {
+	        		$('#hero-wall>ul').css('opacity', 1);
+	        	}, 800);
+
+	   			//$('#hero-wall img').each(function() {
+				// 	$(this).load(function() {
+				// 		$(this).css('opacity', 1);
+				// 	});
+				// });
+
+        	}
 
     	}
 	});
