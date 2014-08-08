@@ -171,7 +171,7 @@ function include(arr,obj) {
 }
 
 function heroWall() {
-	var pSpeakers = ['ricostacruz', 'regnard', 'kutitots', 'aileenapolo', 'marco.palinar', 'helloluis', 'dan.matutina', 'allancaeg', 'andrei.gonzales', 'jpdguzman.rain', 'jason.e.torres', 'designerbriantenorio', 'jesus.santos.9404', 'jmibanez', 'camille.zapata', 'julius.cebreros', 'jamesflorentino', 'johnimbong', 'misslindsey', 'drei.alquiros', 'noelperlas', 'gorissen', 'Saint2ns', 'aaroncajes', 'rv.regalado', 'micael', 'mark.lacsamana', 'levi.ong', 'bluestella', 'sinongkit', 'maepaulino', 'jozzua', 'chakler', 'natassha.po', 'sofimi', 'oj.tibi', 'sarahcada', 'ajalapus', 'chaklera'],
+	var pSpeakers = ['ricostacruz', 'regnard', 'kutitots', 'aileenapolo', 'marco.palinar', 'helloluis', 'dan.matutina', 'allancaeg', 'andrei.gonzales', 'jpdguzman.rain', 'jason.e.torres', 'designerbriantenorio', 'jesus.santos.9404', 'jmibanez', 'camille.zapata', 'julius.cebreros', 'jamesflorentino', 'johnimbong', 'misslindsey', 'drei.alquiros', 'noelperlas', 'gorissen', 'Saint2ns', 'aaroncajes', 'rv.regalado', 'micael', 'mark.lacsamana', 'levi.ong', 'bluestella', 'sinongkit', 'maepaulino', 'jozzua', 'chakler', 'natassha.po', 'sofimi', 'oj.tibi', 'sarahcada', 'ajalapus'],
 		heroes = [],
 		heroesNum;
 
@@ -320,8 +320,16 @@ $(document).ready(function() {
 		};
 	});
 
-	$(window).load(function() {
+	$('.logo>img').load(function() {
+		console.log('lalala');
 		centerAlign(logo);
+	}).each(function() {
+  		if(this.complete) {
+    		$(this).trigger('load');
+		}
+	});
+
+	$(window).load(function() {
 		mapSwitch();
 		heroWall();
 	});

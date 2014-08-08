@@ -525,6 +525,32 @@ body {
 	}
 }
 
+#social {
+	position: fixed;
+	top: 25px;
+	right: 30px;
+	z-index: 999;
+
+	@include breakpoint(lm) {
+		top: 15px;
+	    right: 15px;
+	}
+
+	@include breakpoint(pm) {
+		top: 15px;
+	    right: 15px;
+	}
+
+	>* {
+		display: block;
+		margin: 0 0 0.5em;
+
+		:last-child {
+			margin: 0;
+		}
+	}
+}
+
 #navTrigger {
 	font-family: "franklin-gothic-urw-cond", "helvetica-neue", Helvetica, Arial, sans-serif;
 	font-style: normal;
@@ -911,7 +937,7 @@ section {
 
 	.tag {
 		font-size: 1.5em;
-		padding: 20px 120px;
+		padding: 20px 180px;
 		top: 0;
 
 		@include breakpoint(lm) {
@@ -1646,6 +1672,11 @@ section {
 		    display: none;
 		}
 	}
+}
+
+#sponsors {
+	background: url(../img/bg-sponsors.svg) no-repeat center center, url(../img/bg-halftone.png);
+	@include background-size(100% auto);
 }
 
 #faq {
