@@ -64,6 +64,10 @@ h1 {
 	color: $shieldblue;
 	font-family: $komika;
 
+	@include breakpoint(lm) {
+	    font-size: 3em;
+	}
+
 	@include breakpoint(pm) {
 	    font-size: 3em;
 	}
@@ -544,6 +548,8 @@ body {
 	>* {
 		display: block;
 		margin: 0 0 0.5em;
+		height: 20px;
+		overflow: hidden;
 
 		:last-child {
 			margin: 0;
@@ -960,6 +966,15 @@ section {
 		@include breakpoint(pm) {
 			font-size: 1.3em;
 		}
+
+		// &:before {
+		// 	content: url('../img/home-downarrow.png');
+		// 	width: 100%;
+		// 	height: 30px;
+		// 	position: absolute;
+		// 	top:-45px;
+		// 	left: 0;
+		// }
 	}
 
 	@include breakpoint(t) {
@@ -1675,8 +1690,80 @@ section {
 }
 
 #sponsors {
-	background: url(../img/bg-sponsors.svg) no-repeat center center, url(../img/bg-halftone.png);
-	@include background-size(100% auto);
+	background: url(../img/bg-sponsors.svg) no-repeat center bottom, $shieldblue;
+	padding-bottom: 730px;
+	@include background-size(1925px auto);
+
+	@include breakpoint(l) {
+	    padding-bottom: 780px;
+	}
+
+	@include breakpoint(t) {
+		@include background-size(1145px auto);
+	    padding-bottom: 480px;
+	}
+
+	@include breakpoint(lm) {
+		@include background-size(780px auto);
+	    padding-bottom: 300px;
+	}
+
+	@include breakpoint(pm) {
+		@include background-size(500px auto);
+	    padding-bottom: 230px;
+	}
+
+	.content {
+		text-align: center;
+	}
+
+	.sponsor-group {
+		margin: 0 0 1.6em;
+		padding: 0 60px;
+		@include box-sizing(border-box);
+
+		@include breakpoint(lm) {
+			padding: 0 10px;
+		}
+
+		@include breakpoint(pm) {
+			padding: 0;
+		}
+
+		img {
+			padding: 8px;
+			max-height: 110px;
+			max-width: 270px;
+			vertical-align: middle;
+
+			@include breakpoint(lm) {
+				display: block;
+				margin: 0 auto;
+				max-width: 100%;
+				padding: 10px;
+				@include box-sizing(border-box);
+			}
+
+			@include breakpoint(pm) {
+				display: block;
+				margin: 0 auto;
+				max-width: 100%;
+				padding: 8px;
+				@include box-sizing(border-box);
+			}
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	h2 {
+		font-weight: 800;
+		font-size: 1.6em;
+		line-height: 1.4em;
+		margin-bottom: 0.3em;
+	}
 }
 
 #faq {
