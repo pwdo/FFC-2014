@@ -56,6 +56,17 @@ $franklin: 'franklin-gothic-urw-cond', 'helvetica-neue', Helvetica, Arial, sans-
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'social_icon';
+    src: url('../font/social.eot');
+    src: url('../font/social.eot?#iefix') format('embedded-opentype'),
+         url('../font/social.woff') format('woff'),
+         url('../font/social.ttf') format('truetype'),
+         url('../font/social.svg#social_icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 h1 {
 	font-size: 3.8em;
 	line-height: 1.2em;
@@ -886,6 +897,14 @@ section {
 		    border: 5px solid $fireblack;
 		}
 	}
+
+	a, a:visited, a:link, a:active {
+		color: $textblack;
+	}
+
+	a:hover {
+		color: $justiceblue;
+	}
 }
 
 #home {
@@ -1072,6 +1091,7 @@ section {
 		@include box-sizing(border-box);
 
 		.speaker-name {
+			position: relative;
 			width: 100%;
 			height: $cardWidth * 0.14304px;
 			font-size: 1.2em;
@@ -1082,6 +1102,24 @@ section {
 			border: solid $cardWidth * 0.03906px $fireblack;
 			@include border-image(url(../img/card-border-one.png) 25% repeat);
 			@include box-sizing(border-box);
+
+			.speaker-twitter {
+				position: absolute;
+				top: 0;
+				right: 0;
+				text-decoration: none;
+
+				.icon {
+					font-family: 'social_icon';
+					// color: $textblack;
+				}
+
+				.account {
+					position: absolute;
+					top: -99999px;
+					left: -99999px;
+				}
+			}
 		}
 
 		.speaker-image {
