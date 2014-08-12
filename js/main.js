@@ -293,9 +293,13 @@ $(document).ready(function() {
 	    	root = $('html, body'),
 	    	link = $anchor.attr('href');
 
-	    root.stop().animate({
-	        scrollTop: $(link).offset().top
-	    }, 1200,'easeInOutQuint');
+	    if (!device.mobile() && !$(window).width()<480) {
+			root.stop().animate({
+		        scrollTop: $(link).offset().top
+		    }, 1200,'easeInOutQuint');
+		} else {
+			root.stop().scrollTop($(link).offset().top);
+		}
 
 	    history.pushState(null, null, link);
 

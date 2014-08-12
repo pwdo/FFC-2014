@@ -545,10 +545,18 @@ body {
 	top: 25px;
 	right: 30px;
 	z-index: 999;
+	@include transform(translate(0px,0px));
+	@include transition(transform 0.2s ease-in-out);
 
 	@include breakpoint(lm) {
 		top: 15px;
 	    right: 15px;
+
+	    .nav--open & {
+			@include breakpoint(lm) {
+		    	@include transform(translate(0px,168px));
+			}
+		}
 	}
 
 	@include breakpoint(pm) {
@@ -592,7 +600,7 @@ body {
 	@include transition(transform 0.2s ease-in-out);
 	@include box-shadow(-3px 3px 0px $textblack);
 
-	&:hover {
+	.desktop &:hover {
 		cursor: pointer;
 		background: $powerorange;
 		color: $paperwhite;
@@ -647,21 +655,23 @@ nav {
 	border: 6px solid $textblack;
 	padding: 15px;
 	z-index: 998;
-	@include transform(translate(0px,0px));
+	@include transform(translate3d(0,0,0));
 	@include transition(transform 0.2s ease-in-out, top 0.2s ease-in-out);
 	@include box-sizing(border-box);
 
 	.nav--open & {
-		@include transform(translate(300px,0px));
+		@include transform(translate3d(300px,0,0));
 
 		@include breakpoint(lm) {
-	    	@include transform(translate(0px,168px));
+			top: 0;
+		    left: 0;
+	    	@include transform(translate3d(0,0,0));
 		}
 
 		@include breakpoint(pm) {
 		    top: 0;
 		    left: 0;
-		    @include transform(translate(0,0));
+		    @include transform(translate3d(0,0,0));
 		}
 	}
 
@@ -730,11 +740,15 @@ nav {
 			}
 		}
 	}
+	@include breakpoint(t) {
+	    background: $sandyellow;
+	}
 
 	@include breakpoint(lm) {
     	width: 100%;
     	left: 0;
     	top: -168px;
+    	background: $sandyellow;
     	height: 168px!important;
 	}
 
@@ -742,6 +756,8 @@ nav {
 	    width: 100%;
 	    left: 0px;
 	    top: -150%;
+	    background: $sandyellow;
+	    height: 100%!important;
 	    padding: 44px 15px 15px;
 	}
 }
@@ -787,6 +803,14 @@ nav {
 		z-index: -999;
 		opacity: 0;
 		@include transition(opacity 0.2s ease-in-out);
+
+		@include breakpoint(lm) {
+	    	display: none;
+		}
+
+		@include breakpoint(pm) {
+		    display: none;
+		}
 	}
 
 	.nav--open & {
@@ -924,7 +948,7 @@ section {
 		}
 
 		@include breakpoint(pm) {
-		    width: 73%;
+		    width: 63%;
 		}
 
 		img {
