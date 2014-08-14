@@ -447,6 +447,7 @@ small {
 }
 
 /*------------ General ------------*/
+
 body {
 	font-family: $franklin;
 	font-style: normal;
@@ -548,6 +549,12 @@ body {
 	@include transform(translate(0px,0px));
 	@include transition(transform 0.2s ease-in-out);
 
+	.scroll--false & {
+		@include breakpoint(xl) {
+		    @include transform(translate(10px, -13px));
+		}
+	}
+
 	@include breakpoint(lm) {
 		top: 15px;
 	    right: 15px;
@@ -573,6 +580,10 @@ body {
 		:last-child {
 			margin: 0;
 		}
+	}
+
+	a.twitter-share-button {
+		opacity: 0;
 	}
 }
 
@@ -620,6 +631,18 @@ body {
 		}
 	}
 
+	.scroll--false & {
+		@include breakpoint(xl) {
+		    @include transform(translate(-20px, -20px));
+		}
+	}
+
+	.nav--open.scroll--false & {
+		@include breakpoint(xl) {
+		    @include transform(translate(280px, -20px));
+		}
+	}
+
 	@include breakpoint(xl) {
 	    width: 120px;
 		height: 45px;
@@ -628,6 +651,13 @@ body {
 	}
 
 	@include breakpoint(l) {
+	    width: 80px;
+		height: 45px;
+		line-height: 45px;
+		font-size: 1.9em;
+	}
+
+	@include breakpoint(t) {
 	    width: 80px;
 		height: 45px;
 		line-height: 45px;
@@ -740,8 +770,10 @@ nav {
 			}
 		}
 	}
+
 	@include breakpoint(t) {
 	    background: $sandyellow;
+	    height: 100%!important;
 	}
 
 	@include breakpoint(lm) {
@@ -788,6 +820,8 @@ nav {
 
 #main {
 	position: relative;
+	width: 100%;
+	overflow: hidden;
 	z-index: 1;
 	@include transform(translate(0px,0px));
 	@include transition(transform 0.2s ease-in-out);
@@ -953,19 +987,19 @@ section {
 
 		img {
 			width: 100%;
-			@include filter(drop-shadow( -5px 5px 20px $textblack ));
+			// @include filter(drop-shadow( -5px 5px 20px $textblack ));
 
-			@include breakpoint(t) {
-			    @include filter(none);
-			}
+			// @include breakpoint(t) {
+			//     @include filter(none);
+			// }
 
-			@include breakpoint(lm) {
-			    @include filter(none);
-			}
+			// @include breakpoint(lm) {
+			//     @include filter(none);
+			// }
 
-			@include breakpoint(pm) {
-			    @include filter(none);
-			}
+			// @include breakpoint(pm) {
+			//     @include filter(none);
+			// }
 		}
 	}
 
@@ -1007,7 +1041,7 @@ section {
 		}
 
 		@include breakpoint(pm) {
-			font-size: 1.3em;
+			font-size: 1.1em;
 		}
 
 		// &:before {
@@ -1021,18 +1055,36 @@ section {
 	}
 
 	@include breakpoint(t) {
-	    background: url(../img/home-background-3.png) center no-repeat;
-	    @include background-size(cover);
+		.landscape & {
+			background: url(../img/home-background-3.png) center no-repeat;
+			@include background-size(cover);
+		}
+		.portrait & {
+			background: url(../img/home-background-smallport.png) center no-repeat;
+			@include background-size(cover);
+		}
 	}
 
 	@include breakpoint(lm) {
-	    background: url(../img/home-background-3.png) center no-repeat;
-	    @include background-size(cover);
+	    .landscape & {
+			background: url(../img/home-background-3.png) center no-repeat;
+			@include background-size(cover);
+		}
+		.portrait & {
+			background: url(../img/home-background-smallport.png) center no-repeat;
+			@include background-size(cover);
+		}
 	}
 
 	@include breakpoint(pm) {
-	    background: url(../img/home-background-3.png) center no-repeat;
-	    @include background-size(cover);
+	    .landscape & {
+			background: url(../img/home-background-3.png) center no-repeat;
+			@include background-size(cover);
+		}
+		.portrait & {
+			background: url(../img/home-background-smallport.png) center no-repeat;
+			@include background-size(cover);
+		}
 	}
 }
 

@@ -333,6 +333,14 @@ $(document).ready(function() {
 		}
 	});
 
+	$(window).scroll(function() {
+		if ($(window).scrollTop() < $('#home .tag').outerHeight()) {
+			body.addClass('scroll--false');
+		} else {
+			body.removeClass('scroll--false');
+		};
+	});
+
 	$(window).load(function() {
 		mapSwitch();
 		heroWall();
