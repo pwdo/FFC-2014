@@ -274,6 +274,16 @@ function heroWall() {
 	});
 }
 
+function scrollCheck() {
+	var body = $('body');
+
+	if ($(window).scrollTop() < $('#home .tag').outerHeight()) {
+		body.addClass('scroll--false');
+	} else {
+		body.removeClass('scroll--false');
+	};
+}
+
 $(document).ready(function() {
 	var body = $('body'),
 		mainBackground = $('#background'),
@@ -286,6 +296,7 @@ $(document).ready(function() {
 	heightAdjust(home);
 	heightAdjust(mainBackground);
 	heightAdjust(nav);
+	scrollCheck();
 
 	// Smooth Scroll
 	$('nav a').click(function(e){
@@ -334,11 +345,7 @@ $(document).ready(function() {
 	});
 
 	$(window).scroll(function() {
-		if ($(window).scrollTop() < $('#home .tag').outerHeight()) {
-			body.addClass('scroll--false');
-		} else {
-			body.removeClass('scroll--false');
-		};
+		scrollCheck();
 	});
 
 	$(window).load(function() {
