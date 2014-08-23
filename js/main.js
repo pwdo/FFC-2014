@@ -336,7 +336,6 @@ $(document).ready(function() {
 	});
 
 	$('.logo>img').load(function() {
-		console.log('lalala');
 		centerAlign(logo);
 	}).each(function() {
   		if(this.complete) {
@@ -349,7 +348,7 @@ $(document).ready(function() {
 	});
 
 	$(window).load(function() {
-		mapSwitch();
+		// mapSwitch();
 		heroWall();
 
 		body.append('

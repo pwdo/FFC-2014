@@ -7,6 +7,7 @@ $break-mobile: 480px;
 $break-tablet: 768px;
 $break-desktop: 1140px;
 $break-hd: 1400px;
+$break-xhd: 1920px;
 
 @mixin breakpoint($media) {
   @if $media == pm {
@@ -22,7 +23,10 @@ $break-hd: 1400px;
     @media only screen and (min-width: $break-desktop) and (max-width: $break-hd - 1) { @content; }
   }
   @else if $media == xl {
-    @media only screen and (min-width: $break-hd) { @content; }
+    @media only screen and (min-width: $break-hd) and (max-width: $break-xhd){ @content; }
+  }
+  @else if $media == xxl {
+    @media only screen and (min-width: $break-xhd) { @content; }
   }
 }
 
@@ -1180,6 +1184,10 @@ section {
 	    padding-bottom: 230px;
 		@include background-size(560px, auto);
 	}
+
+	@include breakpoint(xxl) {
+	    @include background-size(100% auto);
+	}
 }
 
 #speaker {
@@ -1200,6 +1208,10 @@ section {
 
 	@include breakpoint(pm) {
 		@include background-size(cover, auto);
+	}
+
+	@include breakpoint(xxl) {
+	    @include background-size(100% auto);
 	}
 
 	.speaker-list {
@@ -1299,6 +1311,40 @@ section {
 
 		img {
 			width: 101%;
+		}
+
+		@include breakpoint(xxl) {
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+
+			&:nth-child(3n-1) {
+				@include transform(translate(0, 35px));
+			}
+
+			&:nth-child(6n-1) {
+				@include transform(rotate(3deg));
+			}
+
+			&:nth-child(6n-2) {
+				@include transform(rotate(-2deg));
+			}
+
+			&:nth-child(6n-3) {
+				@include transform(rotate(1deg));
+			}
+
+			&:nth-child(6n-4) {
+				@include transform(rotate(1deg));
+			}
+
+			&:nth-child(6n-5) {
+				@include transform(rotate(2deg));
+			}
+
+			&:nth-child(6n) {
+				@include transform(rotate(-1deg));
+			}
 		}
 
 		@include breakpoint(xl) {
@@ -1533,45 +1579,51 @@ section {
 	}
 }
 
+// #location {
+// 	background: transparent;
+// 	min-height: 1280px;
+
+// 	.content {
+// 		z-index: 1;
+// 	}
+
+// 	.buttonlink {
+// 		display: block;
+// 		text-align: center;
+// 		text-decoration: none;
+// 		width: 100%;
+// 		padding: 12px 8px;
+// 		background: $powerorange;
+// 		color: $paperwhite;
+// 		font-size: 1.6em;
+// 		margin: 0.6em 0;
+// 		@include box-sizing(border-box);
+// 	}
+
+// 	#map {
+// 		width: 100%;
+// 		height: 100%;
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		background: url(../img/bg-halftone.png);
+
+// 		.tablet &, .mobile & {
+// 			display: none;
+// 		}
+// 	}
+
+// 	.tablet &, .mobile & {
+// 	    min-height: 0;
+// 	    background: url(../img/bg-location.svg) no-repeat center, url(../img/bg-halftone.png);
+// 	    @include background-size(cover);
+// 	}
+// }
+
 #location {
-	background: transparent;
-	min-height: 1280px;
-
-	.content {
-		z-index: 1;
-	}
-
-	.buttonlink {
-		display: block;
-		text-align: center;
-		text-decoration: none;
-		width: 100%;
-		padding: 12px 8px;
-		background: $powerorange;
-		color: $paperwhite;
-		font-size: 1.6em;
-		margin: 0.6em 0;
-		@include box-sizing(border-box);
-	}
-
-	#map {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		background: url(../img/bg-halftone.png);
-
-		.tablet &, .mobile & {
-			display: none;
-		}
-	}
-
-	.tablet &, .mobile & {
-	    min-height: 0;
-	    background: url(../img/bg-location.svg) no-repeat center, url(../img/bg-halftone.png);
-	    @include background-size(cover);
-	}
+	min-height: 0;
+    background: url(../img/bg-location.svg) no-repeat center, url(../img/bg-halftone.png);
+    @include background-size(cover);
 }
 
 #register {
@@ -1581,20 +1633,24 @@ section {
 
 	@include breakpoint(xl) {
 	    padding: 1px 0 0;
-	    max-height: 1000px;
+	    // max-height: 1000px;
 	}
 
 	@include breakpoint(l) {
 	    padding: 1px 0 0;
-	    max-height: 1000px;
+	    // max-height: 1000px;
 	}
 
 	@include breakpoint(t) {
 	    padding: 1px 0 0;
-	    max-height: 1000px;
+	    // max-height: 1000px;
 	}
 
 	.content {
+		@include breakpoint(xxl) {
+		    z-index: 1;
+		    margin: 60px auto;
+		}
 		@include breakpoint(xl) {
 		    z-index: 1;
 		    margin: 60px auto;
@@ -1767,6 +1823,9 @@ section {
 		width: 100%;
 
 		.headcount-sixty li {
+			@include breakpoint(xxl) {
+			    width: 12.5%;
+			}
 			@include breakpoint(xl) {
 			    width: 12.5%;
 			}
@@ -1779,6 +1838,9 @@ section {
 		}
 
 		.headcount-onetwenty li {
+			@include breakpoint(xxl) {
+			    width: 10%;
+			}
 			@include breakpoint(xl) {
 			    width: 10%;
 			}
@@ -1791,6 +1853,9 @@ section {
 		}
 
 		.headcount-oneeighty li {
+			@include breakpoint(xxl) {
+			    width: 10%;
+			}
 			@include breakpoint(xl) {
 			    width: 10%;
 			}
@@ -1803,6 +1868,9 @@ section {
 		}
 
 		.headcount-twoforty li {
+			@include breakpoint(xxl) {
+			    width: 6.25%;
+			}
 			@include breakpoint(xl) {
 			    width: 6.25%;
 			}
@@ -1815,6 +1883,9 @@ section {
 		}
 
 		.headcount-threehundred li {
+			@include breakpoint(xxl) {
+			    width: 5%;
+			}
 			@include breakpoint(xl) {
 			    width: 5%;
 			}
@@ -1827,6 +1898,9 @@ section {
 		}
 
 		.headcount-over li {
+			@include breakpoint(xxl) {
+			    width: 5%;
+			}
 			@include breakpoint(xl) {
 			    width: 5%;
 			}
@@ -1898,6 +1972,10 @@ section {
 	@include breakpoint(pm) {
 		@include background-size(500px auto);
 	    padding-bottom: 230px;
+	}
+
+	@include breakpoint(xxl) {
+	    @include background-size(100% auto);
 	}
 
 	.content {
@@ -2074,7 +2152,7 @@ footer {
 	}
 
 	&:before {
-		content: url(../img/footer-codegeeezer);
+		content: url(../img/footer-codegeeezer.png);
 		position: absolute;
 		right: 500px;
 		bottom: 1px;
@@ -2105,7 +2183,7 @@ footer {
 	}
 
 	&:after {
-		content: url(../img/footer-codegeizer);
+		content: url(../img/footer-codegeizer.png);
 		position: absolute;
 		right: 0;
 		bottom: -20px;
