@@ -190,7 +190,7 @@ function heroWall() {
         		adding;
         	
         	for (var i = 0; i < attendees.length; i++) {
-        		if (!attendees[i].answers[3].response == "" && !include(pSpeakers, attendees[i].answers[3].response) && !include(heroes, attendees[i].answers[3].response)) {
+        		if (attendees[i].answers[3] && !attendees[i].answers[3].response == "" && !include(pSpeakers, attendees[i].answers[3].response) && !include(heroes, attendees[i].answers[3].response)) {
         			heroes.push(attendees[i].answers[3].response);
         		};
         	};
