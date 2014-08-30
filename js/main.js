@@ -310,6 +310,7 @@ $(document).ready(function() {
 			if (name.indexOf(ticketName) >= 0) {
 				var input = $(ticketGroup[t]).find('.tito-ticket-quantity > input');
 				input.prop('disabled', true);
+				$(ticketGroup[t]).addClass('disabled');
 			};
 		};
 	};
