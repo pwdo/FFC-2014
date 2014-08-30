@@ -1786,6 +1786,10 @@ section {
 			text-align: center;
 			outline: none;
 			-webkit-appearance:none;
+
+			&:disabled {
+				background: darken($paperwhite, 15%);
+			}
 		}
 	}
 

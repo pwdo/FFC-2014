@@ -291,12 +291,28 @@ $(document).ready(function() {
 		nav = $('nav'),
 		navTrigger = $('#navTrigger'),
 		home = $('#home'),
-		logo = $('.logo');
+		logo = $('.logo'),
+		blockedTicketList = ['FFC+UXPH Super Pass'];
 
 	heightAdjust(home);
 	heightAdjust(mainBackground);
 	heightAdjust(nav);
 	scrollCheck();
+
+	for (var i = blockedTicketList.length - 1; i >= 0; i--) {
+		var ticketGroup = $('#tito-releases>li'),
+			ticketName = blockedTicketList[i];
+
+		for (var t = ticketGroup.length - 1; t >= 0; t--) {
+			var name = $(ticketGroup[t]).find('.tito-ticket-name').text();
+			// console.log(name);
+			// console.log(ticketName);
+			if (name.indexOf(ticketName) >= 0) {
+				var input = $(ticketGroup[t]).find('.tito-ticket-quantity > input');
+				input.prop('disabled', true);
+			};
+		};
+	};
 
 	// Smooth Scroll
 	$('nav a').click(function(e){
