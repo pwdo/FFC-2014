@@ -1,0 +1,42 @@
+.section-aux h1 {
+	text-align: center;
+}
+section.section-aux a {
+	color: #1185c8;
+}
+.p-lead {
+	font-size: 1.8em;
+}
+.p-indent {
+	margin-left: 2em;
+}
+strong {
+	text-transform: uppercase;
+}
+.calltoaction {
+	text-align: center;
+	margin: 2em 0 0;
+}
+.button {
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	width: 100%;
+	font-family: "franklin-gothic-urw-cond","helvetica-neue",Helvetica,Arial,sans-serif;
+	background: #fdd007;
+	font-size: 1.5em;
+	border: none;
+	outline: none;
+	padding: .5em 0;
+	-webkit-appearance: none;
+	-webkit-transition: background 0.2s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+}
+.button:hover {
+	background: #fee36c;
+}
+section.section-aux a.button, section.section-aux a.button:hover {
+	color: #000;
+}
