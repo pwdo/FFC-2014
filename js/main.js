@@ -292,7 +292,7 @@ $(document).ready(function() {
 		navTrigger = $('#navTrigger'),
 		home = $('#home'),
 		logo = $('.logo'),
-		blockedTicketList = ['FFC+UXPH Super Pass'];
+		blockedTicketList = ['Regular (starts September 27) ', 'Night Owl (starts October 27)'];
 
 	heightAdjust(home);
 	heightAdjust(mainBackground);
