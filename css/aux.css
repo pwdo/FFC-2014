@@ -40,3 +40,23 @@ strong {
 section.section-aux a.button, section.section-aux a.button:hover {
 	color: #000;
 }
+
+.section-promo {
+}
+.section-promo .p-lead {
+	text-align: center;
+	margin-bottom: 2em;
+}
+.section-promo small {
+	font-size: 0.8em;
+	line-height: 1.2;
+	margin-top: 0.5em;
+	display: inline-block;
+	vertical-align: middle;
+}
+.banner {
+	display: inline-block;
+	vertical-align: middle;
+	width: 7em;
+	margin-right: 1em;
+}
