@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"tick",
+				"ticketQuan"
+			],
+			[
+				"tic",
+				"ticketName"
+			],
+			[
 				"font",
 				"font-weight"
 			],
@@ -506,14 +514,6 @@
 			[
 				"ba",
 				"background-position"
-			],
-			[
-				"fsi",
-				"font-size"
-			],
-			[
-				"tea",
-				"text-align"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 17477,
+				"buffer_size": 17926,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,7 +531,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 111606,
+				"buffer_size": 112222,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,7 +539,7 @@
 			"file": "css/styles.scss",
 			"settings":
 			{
-				"buffer_size": 39864,
+				"buffer_size": 40337,
 				"line_ending": "Unix"
 			}
 		}
@@ -797,6 +797,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"i",
+			"Things",
 			"lalala",
 			"max-height: 1000px;",
 			"px",
@@ -922,9 +924,7 @@
 			"dark-",
 			"..",
 			"../",
-			"effect",
-			"Right",
-			"Left"
+			"effect"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -950,15 +950,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 17477,
+						"buffer_size": 17926,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								730,
-								730
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1071,7 +1071,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2502.0,
+						"translation.y": 3863.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1079,7 +1079,7 @@
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1087,15 +1087,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 111606,
+						"buffer_size": 112222,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								107061,
-								107061
+								110738,
+								110738
 							]
 						],
 						"settings":
@@ -1208,7 +1208,7 @@
 							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2519.0,
+						"translation.y": 4073.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1218,15 +1218,15 @@
 					"file": "css/styles.scss",
 					"settings":
 					{
-						"buffer_size": 39864,
+						"buffer_size": 40337,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9696,
-								9696
+								31550,
+								31550
 							]
 						],
 						"settings":
@@ -1339,7 +1339,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 7539.0,
+						"translation.y": 25009.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
