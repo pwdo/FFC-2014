@@ -41,10 +41,16 @@ section.section-aux a.button, section.section-aux a.button:hover {
 	color: #000;
 }
 
+.section-pr small {
+	font-size: .85em;
+	margin: 0;
+}
+
 .section-promo {
+	text-align: center;
 }
 .section-promo .p-lead {
-	text-align: center;
+	
 	margin-bottom: 2em;
 }
 .section-promo small {
@@ -57,6 +63,10 @@ section.section-aux a.button, section.section-aux a.button:hover {
 .banner {
 	display: inline-block;
 	vertical-align: middle;
-	width: 7em;
-	margin-right: 1em;
+	width: 5em;
+	margin-right: 0.5em;
+}
+.banner-wide {
+	width: auto;
+	height: 5em;
 }
