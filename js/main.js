@@ -365,7 +365,7 @@ $(document).ready(function() {
 	});
 
 	$(window).load(function() {
-		// mapSwitch();
+		mapSwitch();
 		heroWall();
 
 		body.append('
