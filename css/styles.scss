@@ -1192,7 +1192,7 @@ section {
 	}
 
 	@include breakpoint(xxl) {
-	    @include background-size(100% auto);
+	    @include background-size(100%, auto);
 	}
 }
 
@@ -1217,7 +1217,7 @@ section {
 	}
 
 	@include breakpoint(xxl) {
-	    @include background-size(100% auto);
+	    @include background-size(100%, auto);
 	}
 
 	.speaker-list {

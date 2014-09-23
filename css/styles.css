@@ -1405,10 +1405,10 @@ section a:hover {
 }
 @media only screen and (min-width: 1920px) {
   #about {
-    -webkit-background-size: 100% auto;
-    -moz-background-size: 100% auto;
-    -o-background-size: 100% auto;
-    background-size: 100% auto;
+    -webkit-background-size: 100%, auto;
+    -moz-background-size: 100%, auto;
+    -o-background-size: 100%, auto;
+    background-size: 100%, auto;
   }
 }
 
@@ -1453,10 +1453,10 @@ section a:hover {
 }
 @media only screen and (min-width: 1920px) {
   #speaker {
-    -webkit-background-size: 100% auto;
-    -moz-background-size: 100% auto;
-    -o-background-size: 100% auto;
-    background-size: 100% auto;
+    -webkit-background-size: 100%, auto;
+    -moz-background-size: 100%, auto;
+    -o-background-size: 100%, auto;
+    background-size: 100%, auto;
   }
 }
 #speaker .speaker-list {
