@@ -523,7 +523,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 20438,
+				"buffer_size": 20730,
 				"line_ending": "Unix"
 			}
 		},
@@ -950,15 +950,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 20438,
+						"buffer_size": 20730,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11632,
-								11632
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1071,7 +1071,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4464.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1207,8 +1207,8 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"word_wrap": false
 						},
-						"translation.x": 4.0,
-						"translation.y": 4834.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1339,7 +1339,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 17516.0,
+						"translation.y": 26807.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
