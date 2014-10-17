@@ -2005,7 +2005,7 @@ section a:hover {
     margin: 60px auto;
   }
 }
-#register #tito-register-form {
+#register .tito-wrapper {
   background: #e9e9eb;
   border: solid 5px #ef4c2e;
   padding: 25px;
@@ -2023,12 +2023,15 @@ section a:hover {
   box-sizing: border-box;
 }
 @media only screen and (max-width: 479px) {
-  #register #tito-register-form {
+  #register .tito-wrapper {
     padding: 15px 10px;
   }
 }
 #register .tito-ticket-list {
   list-style: none;
+}
+#register #tito-previous-releases {
+  display: none;
 }
 #register .tito-ticket {
   display: block;
@@ -2118,6 +2121,9 @@ section a:hover {
   position: relative;
   top: -4px;
 }
+#register .tito-ticket .tito-ticket-quantity span {
+  display: none;
+}
 @media only screen and (min-width: 768px) and (max-width: 1139px) {
   #register .tito-ticket .tito-ticket-quantity:before {
     content: "X";
@@ -2187,14 +2193,10 @@ section a:hover {
   cursor: pointer;
   background: #fee36c;
 }
-#register #tito-footer {
+#register .tito-badge-link {
   display: none;
   margin: 15px 0 0;
   font-size: 1em;
-}
-#register #tito-footer p {
-  font-size: inherit;
-  margin: 0;
 }
 #register .tito-notch {
   display: inherit;

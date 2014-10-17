@@ -299,22 +299,6 @@ $(document).ready(function() {
 	heightAdjust(nav);
 	scrollCheck();
 
-	for (var i = blockedTicketList.length - 1; i >= 0; i--) {
-		var ticketGroup = $('#tito-releases>li'),
-			ticketName = blockedTicketList[i];
-
-		for (var t = ticketGroup.length - 1; t >= 0; t--) {
-			var name = $(ticketGroup[t]).find('.tito-ticket-name').text();
-			// console.log(name);
-			// console.log(ticketName);
-			if (name.indexOf(ticketName) >= 0) {
-				var input = $(ticketGroup[t]).find('.tito-ticket-quantity > input');
-				input.prop('disabled', true);
-				$(ticketGroup[t]).addClass('disabled');
-			};
-		};
-	};
-
 	// Smooth Scroll
 	$('nav a').click(function(e){
 	    var $anchor = $(this),
@@ -371,6 +355,22 @@ $(document).ready(function() {
 		body.append('
 			<script>'+'!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");'+'</script>
 		');
+
+		for (var i = blockedTicketList.length - 1; i >= 0; i--) {
+			var ticketGroup = $('#tito-tito-pwdo-ffc-2014-1-releases>li'),
+				ticketName = blockedTicketList[i];
+
+			for (var t = ticketGroup.length - 1; t >= 0; t--) {
+				var name = $(ticketGroup[t]).find('.tito-ticket-name').text();
+				// console.log(name);
+				// console.log(ticketName);
+				if (name.indexOf(ticketName) >= 0) {
+					var input = $(ticketGroup[t]).find('.tito-ticket-quantity > input');
+					input.prop('disabled', true);
+					$(ticketGroup[t]).addClass('disabled');
+				};
+			};
+		};
 	});
 
 	$(window).resize(function() {

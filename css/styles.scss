@@ -1671,7 +1671,21 @@ section {
 		}
 	}
 
-	#tito-register-form {
+	// #tito-register-form {
+	// 	background: darken($paperwhite, 3%);
+	// 	border: solid 5px $powerorange;
+	// 	padding: 25px;
+	// 	margin: 0 0 12px 8px;
+	// 	@include box-shadow(-2px 2px 0 0 $powerorange, -4px 4px 0 0 $powerorange, -6px 6px 0 0 $powerorange, -8px 8px 0 0 $powerorange);
+	// 	@include border-radius(8px);
+	// 	@include box-sizing(border-box);
+
+	// 	@include breakpoint(pm) {
+	// 	    padding: 15px 10px;
+	// 	}
+	// }
+
+	.tito-wrapper {
 		background: darken($paperwhite, 3%);
 		border: solid 5px $powerorange;
 		padding: 25px;
@@ -1689,7 +1703,9 @@ section {
 		list-style: none;
 	}
 
-
+	#tito-previous-releases {
+		display: none;
+	}
 
 	.tito-ticket {
 		display: block;
@@ -1766,6 +1782,10 @@ section {
 			float: right;
 			position: relative;
 			top: -4px;
+
+			span {
+				display: none;
+			}
 		}
 
 		@include breakpoint(t) {
@@ -1837,15 +1857,10 @@ section {
 		}
 	}
 
-	#tito-footer {
+	.tito-badge-link {
 		display: none;
 		margin: 15px 0 0;
 		font-size: 1em;
-
-		p {
-			font-size: inherit;
-			margin: 0;
-		}
 	}
 
 	.tito-notch {
