@@ -523,7 +523,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 21308,
+				"buffer_size": 21446,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,7 +531,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 112219,
+				"buffer_size": 112254,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,7 +539,7 @@
 			"file": "css/styles.scss",
 			"settings":
 			{
-				"buffer_size": 40249,
+				"buffer_size": 40713,
 				"line_ending": "Unix"
 			}
 		}
@@ -652,6 +652,7 @@
 	},
 	"file_history":
 	[
+		"/Volumes/public-html/ffc-2014/FFC2014.sublime-project",
 		"/Volumes/public-html/themissingbulb/wp-content/themes/themissingtheme/themissingbulb.sublime-project",
 		"/Users/Chakler/Desktop/titolist-g.json",
 		"/Volumes/public-html/ffc-2014/tito-user.php",
@@ -778,8 +779,7 @@
 		"/Users/Chakler/Desktop/sass tutorial/css/reset.css",
 		"/Volumes/public-html/prefix/php/medium.php",
 		"/Volumes/public-html/prefix/php/sharrre.php",
-		"/Volumes/public-html/prefix/MyInfo.xml",
-		"/Volumes/public-html/prefix/php/OnSite/medium.php"
+		"/Volumes/public-html/prefix/MyInfo.xml"
 	],
 	"find":
 	{
@@ -950,15 +950,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 21308,
+						"buffer_size": 21446,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14729,
-								14729
+								20989,
+								20989
 							]
 						],
 						"settings":
@@ -1071,7 +1071,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5312.0,
+						"translation.y": 5502.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1087,15 +1087,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 112219,
+						"buffer_size": 112254,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								111754,
-								111766
+								111562,
+								111562
 							]
 						],
 						"settings":
@@ -1207,8 +1207,8 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"word_wrap": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": 4.0,
+						"translation.y": 4834.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1218,15 +1218,15 @@
 					"file": "css/styles.scss",
 					"settings":
 					{
-						"buffer_size": 40249,
+						"buffer_size": 40713,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								20767,
-								20767
+								33102,
+								33102
 							]
 						],
 						"settings":
@@ -1339,7 +1339,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 23466.0,
+						"translation.y": 26066.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
