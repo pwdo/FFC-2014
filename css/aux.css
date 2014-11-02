@@ -1,6 +1,14 @@
 .section-aux h1 {
 	text-align: center;
 }
+.section-aux h2 {
+	font-family: 'komika_axisregular', sans-serif;
+	font-size: 2.4em;
+	margin-top: 1em;
+	margin-bottom: .5em;
+	color: #1185C8;
+	color: #002c3d;
+}
 section.section-aux a {
 	color: #1185c8;
 }
