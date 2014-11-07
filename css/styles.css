@@ -2030,8 +2030,11 @@ section a:hover {
 #register .tito-ticket-list {
   list-style: none;
 }
-#register #tito-previous-releases {
-  display: none;
+#register #tito-previous-releases li.tito-ticket:last-child {
+  margin: 0;
+}
+#register #tito-previous-releases .tito-ticket-price-quantity {
+  text-align: right;
 }
 #register .tito-ticket {
   display: block;
@@ -2176,6 +2179,7 @@ section a:hover {
   background: #c9c9cd;
 }
 #register .tito-submit {
+  display: none;
   width: 100%;
   font-family: "franklin-gothic-urw-cond", "helvetica-neue", Helvetica, Arial, sans-serif;
   background: #fdd007;

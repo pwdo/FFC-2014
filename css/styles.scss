@@ -1704,7 +1704,13 @@ section {
 	}
 
 	#tito-previous-releases {
-		display: none;
+		// display: none;
+		li.tito-ticket:last-child {
+			margin: 0;
+		}
+		.tito-ticket-price-quantity {
+			text-align: right;
+		}
 	}
 
 	.tito-ticket {
@@ -1841,6 +1847,7 @@ section {
 	}
 
 	.tito-submit {
+		display: none;
 		width: 100%;
 		font-family: $franklin;
 		background: #fdd007;
